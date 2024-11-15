@@ -6,6 +6,15 @@ const div = document.createElement('div');
 div.setAttribute("id", "container");
 document.body.appendChild(div);
 
+function randomColor(){
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+
+    let rgb = `rgb(${r}, ${g}, ${b})`;
+    return rgb;
+}
+
 function addASquare(size){
     const square = document.createElement('div');
     square.classList.add("square");
@@ -13,7 +22,7 @@ function addASquare(size){
     div.appendChild(square);
 
     square.addEventListener('mouseover', () => {
-        square.style.backgroundColor = "yellowgreen";
+        square.style.backgroundColor = randomColor();
     });
 }
 
